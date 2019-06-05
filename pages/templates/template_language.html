@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>template_language</title>
+</head>
+<body>
+    <h1>반복문</h1>
+    {% for menu in menus %}
+        <td>{{menu}}</td>
+    {% endfor %}
+    <hr>
+    {% for menu in menus %}
+        <td>{{forloop.counter}} {{menu}}</td>
+    {% endfor %}
+
+    <hr>
+
+
+    {% for menu in menus %}
+        <p>{{forloop.counter}} {{menu}}</p>
+    {% endfor %}
+    <hr>
+     {{message}}
+    <hr>
+    {% for user in empty_list %}
+        <p>{{user}}</p>
+    {% empty %}
+        <p>현재 작성된 내용이 없습니다</p>
+    {% endfor %}
+
+    <h3>2. 조건문 </h3>
+
+    {% if '짜짱면' in menus %}
+        <p>짜장면엔 단무지지</p>
+    {% endif %}
+
+
+<!--    <h3>2. 반복+조건문 </h3>-->
+<!--    {% for message in messages %}-->
+
+<!--        {% if message %}-->
+<!--            <p>짜장면엔 단무지지</p>-->
+<!--        {% endif %}-->
+<!--    {% endfor %}-->
+<!--    <h3>6. 글자 관련 필터 </h3>-->
+<!--    {% for message in messages %}-->
+
+<!--        {% if message %}-->
+<!--            <p>짜장면엔 단무지지</p>-->
+<!--        {% endif %}-->
+<!--    {% endfor %}-->
+
+
+
+    <h3>7. 날짜 표현</h3>
+        <p>{{ datetimenow }}</p>
+    <P>{% now "DATETIME_FORMAT" %}</P>
+    <P>{% now "SHORT_DATETIME_FORMAT" %}</P>
+    <P>{% now "DATE_FORMAT" %}</P>
+    <P>{% now "SHORT_DATE_FORMAT" %}</P>
+
+    <hr>
+    {% now "y년 m월 d일(d) h:i "%}
+
+    <P>{% now "SHORT_DATE_FORMAT" %}</P>
+
+
+
+
+
+</body>
+</html>
